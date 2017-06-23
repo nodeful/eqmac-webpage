@@ -1,0 +1,358 @@
+$skew-degrees: 2deg;
+
+.no-margin{
+  margin: 0 !important;
+}
+
+.margin-2{
+  margin: 2vw * $scale;
+}
+
+.padding-1{
+  padding: 1vw * $scale;
+}
+
+.width-5{
+  width: 5vw * $scale;
+}
+
+.underline{
+  text-decoration: underline !important;
+}
+
+.inline{
+  display: inline-block;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.error-border{
+  border: 2px solid red;
+}
+
+.align-center{
+  text-align: center;
+}
+
+.skew-right{
+  -webkit-transform: skewY($skew-degrees);
+  -moz-transform: skewY($skew-degrees);
+  -ms-transform: skewY($skew-degrees);
+  -o-transform: skewY($skew-degrees);
+  transform: skewY($skew-degrees);
+  margin-top: -5vw * ($scale*2);
+  padding-bottom: 15vw * $scale !important;
+
+.unskew-container{
+  -webkit-transform: skewY(-$skew-degrees);
+  -moz-transform: skewY(-$skew-degrees);
+  -ms-transform: skewY(-$skew-degrees);
+  -o-transform: skewY(-$skew-degrees);
+  transform: skewY(-$skew-degrees);
+}
+}
+
+.skew-left{
+  -webkit-transform: skewY(-$skew-degrees);
+  -moz-transform: skewY(-$skew-degrees);
+  -ms-transform: skewY(-$skew-degrees);
+  -o-transform: skewY(-$skew-degrees);
+  transform: skewY(-$skew-degrees);
+  margin-top: -5vw * ($scale*2);
+  padding-bottom: 15vw * $scale !important;
+
+.unskew-container{
+  -webkit-transform: skewY($skew-degrees);
+  -moz-transform: skewY($skew-degrees);
+  -ms-transform: skewY($skew-degrees);
+  -o-transform: skewY($skew-degrees);
+  transform: skewY($skew-degrees);
+}
+}
+
+.strikethrough {
+  position: relative;
+}
+.strikethrough:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  right: 0;
+  border-top: 2px solid;
+  border-color: inherit;
+
+  -webkit-transform:rotate(-25deg);
+  -moz-transform:rotate(-25deg);
+  -ms-transform:rotate(-25deg);
+  -o-transform:rotate(-25deg);
+  transform:rotate(-25deg);
+}
+
+
+#app{
+  width: 100vw;
+  text-align: center;
+  font-family: Roboto-Medium, Arial, "Times New Roman", sans-serif;
+  color: white;
+  font-size: 1vw * $scale;
+  overflow-x: hidden;
+
+  a{
+    text-decoration: none;
+    color: white;
+  }
+
+  .github{
+    fill:$yellow;
+    color:$darker-gray;
+    position: absolute;
+    top: 0;
+    border: 0;
+    right: 0;
+    z-index: 100;
+  }
+
+  .github-corner .octo-arm {
+    animation: octocat-wave 1s ease-in-out;
+    -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+
+    @keyframes octocat-wave {
+      0%,100% {
+        transform: rotate(0deg)
+      }
+
+      20%,60% {
+        transform: rotate(-20deg)
+      }
+
+      40%,80% {
+        transform: rotate(10deg)
+      }
+    }
+
+    @media (max-width: 500px) {
+      .github-corner:hover .octo-arm {
+        animation:none
+      }
+
+      .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+      }
+    }
+  }
+
+
+
+  #header{
+    top: 1vw * $scale;
+    position: absolute;
+    width: 100vw;
+    background-color: transparent;
+    z-index: 20;
+
+    .left{
+      float: left;
+    }
+    .right{
+      float: right;
+    }
+
+    a{
+      margin: 2vw * $scale;
+    }
+  }
+
+  #overview{
+    width: 100vw;
+    background-color: $darker-gray;
+    padding: 3vw * $scale;
+    padding-bottom: 10vw * $scale !important;
+    position: relative;
+    overflow: hidden;
+
+    .btn{
+      width: 40%;
+    }
+
+    .featured-image{
+      position: absolute;
+      right: 50vw;
+      width: 55vw * $scale;
+    }
+
+    .featured-screenshot{
+      position: absolute;
+      left: 30vw * 1/$scale;
+      width: 15vw * $scale;
+      top: 7vw * $scale;
+    }
+
+    .featured-text{
+      margin-left: 50vw;
+      padding-top: 3vw * $scale;
+
+      .icon{
+        width: 10vw;
+      }
+
+      span{
+        font-family: Roboto-Thin;
+        font-size: 1vw * $scale;
+      }
+
+      .compare{
+        font-family: Roboto-ThinItalic;
+        color: $light-gray;
+        font-size: 1vw * $scale;
+      }
+
+      .compare:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+
+
+  #features{
+    width: 100vw;
+    background-color: $dark-gray;
+    padding: 4vw * $scale;
+
+    .feature-table{
+      margin: 0 auto;
+      border: 1px solid white;
+
+
+      .titles{
+        border-bottom: 1px solid white;
+      }
+      .version{
+        padding: 1vw * $scale 6vw * $scale;
+      }
+
+      .featured-text{
+        padding: 0 2vw * $scale;
+      }
+
+      th,tr{
+        border: 1px solid white;
+        border-top: none;
+        border-bottom: none;
+        padding: 0.5vw * $scale;
+      }
+      .boolean{
+        width: 2vw * $scale;
+      }
+
+      .special-text{
+        font-size: 0.7vw * $scale;
+      }
+
+      .free{
+        border-right: 2px solid $yellow;
+      }
+
+      .full-border{
+        border: 2px solid $yellow;
+      }
+
+      .full{
+        @extend .full-border;
+        border-bottom: none;
+        border-top: none;
+
+
+      }
+
+      .full-first{
+        border: 2px solid $yellow !important;
+      }
+
+      .full-last{
+        border-bottom: 2px solid $yellow !important;
+      }
+    }
+  }
+
+  #donate{
+    width: 100vw;
+    background-color: $yellow;
+    color: $gray;
+    padding: 4vw * $scale !important;
+
+    .donation-slider.rzslider{
+      .rz-bar{
+        background: $darker-gray;
+      }
+      .rz-selection{
+        background: $dark-gray;
+      }
+      .rz-pointer{
+        background: $dark-gray;
+      }
+
+      .rz-pointer:after{
+        display: none;
+      }
+
+      .rz-pointer:focus{
+        outline: none;
+      }
+
+      .rz-bubble {
+        font-weight: bold;
+        color: white;
+        font-size: 3vw * $scale;
+      }
+    }
+
+    .donation-options{
+
+      .option{
+        display: inline-block;
+        img{
+          width: 10vw * $scale;
+        }
+      }
+
+      .hidder{
+        position: absolute;
+        left: 0;
+        width: 100vw;
+        height:10vw;
+        background-color: rgba($yellow, 0.5);
+      }
+    }
+
+    .loading{
+      img{
+        width: 20vw * $scale;
+      }
+    }
+
+  }
+
+
+  #donate-rectifier{
+    background-color: $yellow;
+    $height: 6vw;
+    height: $height;
+    margin-top: -$height;
+  }
+
+  #footer{
+    padding: 0.4vw * $scale;
+    background-color: $darker-gray;
+  }
+
+  //#footer{
+  //  height:2vw * $scale;
+  //  background-color: $darker-gray;
+  //}
+
+}

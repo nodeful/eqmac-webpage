@@ -1,0 +1,21 @@
+{
+  "name": "eqmac-webpage",
+  "version": "1.0.0",
+  "scripts": {},
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-scroll": "^1.0.2",
+    "angularjs-slider": "^6.2.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "merge-stream": "^1.0.1"
+  }
+}

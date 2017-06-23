@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bitgapp | eqMac2</title>
+    <meta name="keywords" content="equalizer,system-wide,audio,system,wide,OSX,mac,eqMac,eq,macos,sierra,eqMac2,bluetooth,airplay,dac,open,source,open-source,open+source">
+    <meta name="description" lang="en" content="eqMac2 is a System-Wide audio equalizer for OSX. eqMac is absolutely free for everyone.">
+    <link href="css/main.min.css" rel="stylesheet">
+    <script src="js/main.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-96287398-1', 'auto');
+		ga('send', 'pageview');
+
+    </script>
+</head>
+<body ng-app="eqMac" id="app">
+<a href="https://github.com/romankisil/eqMac2" target="_blank" class="github-corner" aria-label="Fork eqMac2 on Github">
+    <svg width="150" height="150" viewBox="0 0 250 250" class="github" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+
+<div id="header">
+    <div class="left">
+        <a href="../">Bitgapp</a>
+    </div>
+
+</div>
+
+<div id="overview" ng-controller="OverviewCtrl as c">
+    <img class="featured-image" src="img/macbook.jpg">
+    <img class="featured-screenshot" src="img/eqmac.png">
+    <div class="featured-text">
+        <img src="img/icon.jpg" class="icon">
+        <h1>eqMac2</h1>
+        <h2>System-Wide Audio Equalizer for Mac</h2>
+        <h3>Free & Open Source</h3>
+        <span>Improves your Audio Listening on OSX / macOS<br>
+            Experience Music on your Mac, how it's ment to be</span>
+        <br>
+        <p>
+            Made by
+            <a class="yellow" href="https://twitter.com/romanbitgapp" target="_blank">@RomanKisil</a>
+            and other
+            <a class="yellow" href="https://github.com/romankisil/eqMac2/graphs/contributors" target="_blank">Contributors</a>
+        </p>
+        <a href="" ng-click="download()">
+            <div class="btn btn-bordered">
+                <span>Download</span>
+            </div>
+        </a>
+        <a href="" ng-click="animateToDiv('donate')">
+            <div class="btn bg-yellow">
+                <span>Contribute</span>
+            </div>
+        </a>
+        <br>
+
+        <a href="" ng-click="animateToDiv('features')"  class="compare">Compare Features</a>
+        <p count-to="{{c.downloads}}" value="0" duration="2" after-text="{{' Downloads'}}">0 Downloads</p>
+    </div>
+</div>
+
+<div id="features" class="skew-right" ng-controller="FeaturesCtrl as c">
+    <table class="feature-table unskew-container">
+        <tr class="titles">
+            <th>Features</th>
+            <th class="version v1">eqMac</th>
+            <th class="version full full-first">eqMac2</th>
+        </tr>
+        <tr ng-repeat="feature in c.features" class="{{$index % 2 == 0 ? 'bg-darker-gray': ''}}">
+            <th class="featured-text {{feature.attention ? 'full-first' : ''}}">
+                {{feature.text}}<br>
+                <span class="special-text no-margin" ng-show="feature.specialText">{{feature.specialText}}</span>
+            </th>
+            <th class="v1">
+                <img class="boolean" ng-show="feature.availableOn['v1']" src="img/tick.png">
+            </th>
+            <th class="full">
+                <img class="boolean" ng-show="feature.availableOn['v2'] && !feature.note" src="img/tick.png">
+                <p class="no-margin" ng-show="feature.fullNote">{{feature.fullNote}}</p>
+            </th>
+        </tr>
+        <tr class="{{c.features.length % 2 == 0 ? 'bg-darker-gray': ''}}">
+            <th class="last">
+                Ways to get<br><br>
+                <span class="special-text no-margin" >Price</span>
+            </th>
+            <th class="free last">
+                <a>
+                    <div class="btn no-margin btn-disabled">
+                        <span>Out of date</span>
+                    </div>
+                </a><br>
+                <span class="special-text no-margin" >Free</span>
+            </th>
+            <th class="full full-last">
+                <a href=""  ng-click="download()">
+                    <div class="btn btn-bordered no-margin">
+                        <span>Download</span>
+                    </div>
+                </a><br>
+                <span class="special-text no-margin" >Free</span>
+            </th>
+        </tr>
+    </table>
+</div>
+
+
+<div id="donate" class="skew-left" ng-controller="DonateCtrl as c">
+    <div class="unskew-container">
+        <div ng-hide="c.fail || c.success || c.loading">
+            <h1>Support the Project</h1>
+            <p class="white">Donations help to pay for Hosting, Certificates, Development and make eqMac free and awesome for everyone!</p>
+            <h1>How much would you like to Donate?</h1>
+            <br><br>
+            <rzslider class="donation-slider"
+                    rz-slider-model="c.slider.value"
+                    rz-slider-options="c.slider.options"
+            ></rzslider>
+            <h3>Pay with:</h3>
+            <div class="donation-options">
+                <!--<div class="hidder" ng-hide="false"></div>-->
+                <div class="option" ng-show="c.stripeLoaded">
+                    <a href="" ng-click="c.donateWithStripe();">
+                        <img src="img/stripe.jpg">
+                    </a><br>
+                    <span>Recommended</span>
+                </div>
+                <br><br>
+                <div class="option" id="paypal-button"></div>
+            </div>
+
+        </div>
+        <div ng-show="c.success" class="success">
+            <h1>Success</h1>
+            <h2>Thanks for the support!</h2>
+        </div>
+        <div ng-show="c.fail" class="fail">
+            <h1>Failed</h1>
+            <h2>Something went wrong during your Donation, you have not been charged. Please try again later :)</h2>
+        </div>
+        <div ng-show="c.loading" class="loading">
+            <img src="img/loading.svg">
+        </div>
+
+        <br>
+        <div ng-hide="c.loading || c.fail">
+            <h1>You can also support by sharing your intelligence!</h1>
+            <br>
+            <h2>If you are an
+                <span class="white">Objective-C</span> ||
+                <span class="white">Swift</span> ||
+                <span class="white">C++</span> developer ||
+                <span class="white">UI/UX</span> designer:</h2>
+            <h2>You can contribute on <a class="white" href="https://github.com/romankisil/eqMac2" target="_blank">romankisil/eqMac2</a> repo!</h2>
+            <br>
+            <h2>If you are a <span class="white">Web Front-End</span> developer || <span class="white">UI/UX</span> designer:</h2>
+            <h2>You can contribute on <a class="white" href="https://github.com/romankisil/eqmac-webpage" target="_blank">romankisil/eqmac-webpage</a> repo!</h2>
+        </div>
+    </div>
+</div>
+
+<div id="donate-rectifier"></div>
+
+<div id="footer">
+    <p>
+        Made by
+        <a class="yellow" href="https://twitter.com/romanbitgapp" target="_blank">@RomanKisil</a>
+        and other
+        <a class="yellow" href="https://github.com/romankisil/eqMac2/graphs/contributors" target="_blank">Contributors</a>
+    </p></div>
+</body>
+</html>

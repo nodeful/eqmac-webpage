@@ -1,0 +1,23 @@
+$scale: 1.5;
+
+@import "modules/normalize";
+
+@import "modules/mixins";
+
+@import "modules/colors";
+
+@import "modules/typography";
+
+@import "modules/buttons";
+
+@import "modules/variables";
+
+@import "breakpoints/base";
+
+
+@media only screen and (min-width: 1440px) {
+  $scale: 1;
+  @import "modules/buttons";
+  @import "breakpoints/base";
+}
+
