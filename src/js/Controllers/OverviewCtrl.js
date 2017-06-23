@@ -15,7 +15,7 @@
 		};
 
 		(function onEnter() {
-			// getDownloads();
+			getDownloads();
 		})();
 
 		c.download = function(){
