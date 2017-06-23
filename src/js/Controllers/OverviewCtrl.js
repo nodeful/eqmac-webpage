@@ -1,8 +1,7 @@
 
 (function(){
 	var OverviewCtrl = function(
-		RemoteDataService,
-	    $window
+		RemoteDataService
 	){
 		var c = this;
 		c.downloads = 125000 + Math.random()*10000; //just a fallback if the API is down
@@ -18,17 +17,10 @@
 			getDownloads();
 		})();
 
-		c.download = function(){
-			RemoteDataService.getDownloadLink()
-				.then(function(resp){
-					$window.location = resp.download_link;
-				});
-		}
 	};
 
 	angular.module('eqMac')
 		.controller('OverviewCtrl', [
 			'RemoteDataService',
-			'$window',
 			OverviewCtrl])
 })();
