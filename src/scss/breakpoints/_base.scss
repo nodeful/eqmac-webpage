@@ -185,13 +185,6 @@ $skew-degrees: 2deg;
       width: 55vw * $scale;
     }
 
-    .featured-screenshot{
-      position: absolute;
-      left: 30vw * 1/$scale;
-      width: 15vw * $scale;
-      top: 7vw * $scale;
-    }
-
     .featured-text{
       margin-left: 50vw;
       padding-top: 3vw * $scale;
