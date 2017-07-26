@@ -29,6 +29,11 @@
 			})
 		};
 
+		console.log(window.location.hash);
+		if(window.location.hash == '#/donate'){
+			$rootScope.animateToDiv('donate');
+		}
+
 		$rootScope.download = function () {
 			RemoteDataService.download();
 		}
