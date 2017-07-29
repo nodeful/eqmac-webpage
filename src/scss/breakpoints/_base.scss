@@ -200,12 +200,6 @@ $skew-degrees: 2deg;
         font-size: 1vw * $scale;
       }
 
-      .compare{
-        font-family: Roboto-ThinItalic;
-        color: $light-gray;
-        font-size: 1vw * $scale;
-      }
-
       .compare:hover{
         text-decoration: underline;
       }
