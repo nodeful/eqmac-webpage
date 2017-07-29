@@ -53,7 +53,8 @@
 					key: CONST.STRIPE_PUBLIC_KEY,
 					image: 'https://bitgapp.com/img/bitgapp.png',
 					name: 'Bitgapp',
-					zipCode: false
+					zipCode: false,
+					panelLabel: 'Donate'
 				});
 
 				$window.addEventListener('popstate', function() {

@@ -30,6 +30,10 @@
 			return ($window.hasOwnProperty(name) && typeof $window[name] === 'object')
 		};
 
+		Utils.formatLargeInt = function (int) {
+			return Math.round(int).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+		}
+
 		return Utils;
 	};
 

@@ -5,7 +5,6 @@
 (function(){
 
 	var dependencies = [
-		'countTo',
 		'duScroll',
 		'rzModule'
 	];

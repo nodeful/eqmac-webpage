@@ -20,6 +20,10 @@
 			return post('/donate/paypal', token);
 		};
 
+		RemoteDataService.getRepoInfo = function () {
+			return get('https://api.github.com/repos/romankisil/eqMac2', true);
+		};
+
 		RemoteDataService.download = function () {
 			return get('/download')
 				.then(function (resp) {
@@ -32,9 +36,9 @@
 				});
 		};
 
-		var get = function (url) {
+		var get = function (url, urlOverride) {
 			var q = $q.defer();
-			$http.get(CONST.API_URL + url)
+			$http.get(urlOverride ? url : CONST.API_URL + url)
 				.then(function (resp) {
 					if(resp.status == 200){
 						q.resolve(resp.data);

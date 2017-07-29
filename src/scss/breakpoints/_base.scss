@@ -106,6 +106,8 @@ $skew-degrees: 2deg;
   }
 
   .github{
+    width: 10vw;
+    height: 10vw;
     fill:$yellow;
     color:$darker-gray;
     position: absolute;
@@ -117,7 +119,7 @@ $skew-degrees: 2deg;
 
   .github-corner .octo-arm {
     animation: octocat-wave 1s ease-in-out;
-    -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: infinite; //safari
     animation-iteration-count: infinite;
     animation-delay: 1s;
 
@@ -207,6 +209,20 @@ $skew-degrees: 2deg;
       .compare:hover{
         text-decoration: underline;
       }
+
+      .social-links{
+        a{
+          color: lighten($light-gray, 20%);
+          padding: 0 .5vw * $scale;
+          img{
+            vertical-align: middle;
+            width: 1vw * $scale;
+          }
+        }
+        a:hover{
+          color: white;
+        }
+      }
     }
   }
 
@@ -216,6 +232,9 @@ $skew-degrees: 2deg;
     background-color: $dark-gray;
     padding: 4vw * $scale;
 
+    .btn{
+      width: 90%;
+    }
     .feature-table{
       margin: 0 auto;
       border: 1px solid white;
@@ -247,27 +266,25 @@ $skew-degrees: 2deg;
       }
 
       .free{
-        border-right: 2px solid $yellow;
+        border-right: .2vw solid $yellow;
       }
 
       .full-border{
-        border: 2px solid $yellow;
+        border: .2vw solid $yellow;
       }
 
       .full{
         @extend .full-border;
         border-bottom: none;
         border-top: none;
-
-
       }
 
       .full-first{
-        border: 2px solid $yellow !important;
+        border: .2vw solid $yellow !important;
       }
 
       .full-last{
-        border-bottom: 2px solid $yellow !important;
+        border-bottom: .2vw solid $yellow !important;
       }
     }
   }
@@ -306,10 +323,12 @@ $skew-degrees: 2deg;
 
     .donation-options{
 
+
       .option{
         display: inline-block;
+        padding: 0 2vw;
         img{
-          width: 10vw * $scale;
+          width: 200px;
         }
       }
 
