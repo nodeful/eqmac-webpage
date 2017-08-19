@@ -93,12 +93,17 @@ $skew-degrees: 2deg;
 
 
 #app{
+
+
   width: 100vw;
   text-align: center;
   font-family: Roboto-Medium, Arial, "Times New Roman", sans-serif;
   color: white;
   font-size: 1vw * $scale;
   overflow-x: hidden;
+  background-color: $darker-gray;
+
+
 
   a{
     text-decoration: none;
@@ -184,7 +189,7 @@ $skew-degrees: 2deg;
     .featured-image{
       position: absolute;
       right: 50vw;
-      width: 60vw * $scale;
+      height: 90%;
     }
 
     .featured-text{
@@ -332,6 +337,29 @@ $skew-degrees: 2deg;
         width: 100vw;
         height:10vw;
         background-color: rgba($yellow, 0.5);
+      }
+    }
+
+    .crypto-options{
+
+      .crypto-option{
+        @include border-radius(2vw);
+        border: 1px solid $darker-gray;
+        background-color: white;
+        padding: 1vw * $scale 2vw * $scale;
+        display: inline-block;
+        margin: 1vw * $scale 2vw * $scale;
+
+        img{
+          width: 100%;
+        }
+
+        span, button{
+          display: block;
+          width: 100%;
+          text-align: center;
+          margin-top: 1vw;
+        }
       }
     }
 
