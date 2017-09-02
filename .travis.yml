@@ -11,8 +11,8 @@ script:
     - gulp build
 
 after_script:
-    - git config --global user.email "travis@travis-ci.org"
-    - git config --global user.name "Travis CI"
+    - git config --global user.email "romankisilo@gmail.com"
+    - git config --global user.name "Roman Kisil"
     - git clone https://github.com/romankisil/bitgapp.com.git
     - cp -R build/ bitgapp.com/eqmac/
     - cd bitgapp.com/
