@@ -13,7 +13,7 @@ script:
 after_script:
     - git config --global user.email "travis@travis-ci.org"
     - git config --global user.name "Travis CI
-    - git clone https://${GH_TOKEN}github.com/romankisil/bitgapp.com.git
+    - git clone https://${GH_TOKEN}@github.com/romankisil/bitgapp.com.git
     - cp -R build/ bitgapp.com/eqmac/
     - cd bitgapp.com/
     - git push origin master
