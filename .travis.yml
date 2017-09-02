@@ -1,20 +1,23 @@
 language: node_js
 node_js:
-- '6.9'
+  - "6.9"
+
 sudo: required
+
 before_script:
-- npm test
+    - npm test
+
 script:
-- gulp build
+    - gulp build
+
 after_script:
-- git config --global user.email "romankisilo@gmail.com"
-- git config --global user.name "romankisil"
-- git clone https://$GH_TOKEN@github.com/romankisil/bitgapp.com.git
-- cp -R build/ bitgapp.com/eqmac/
-- cd bitgapp.com/
-- git add --all
-- git commit -m 'update eqmac'
-- git push origin master
-env:
-  global:
-    secure: iwc2WJXIN/Is1Y2fz3ID0WdSwDlvwUFqNUdjO+sWDTzPpHsuAWTmGXSogTyBlQwDQSlIhw5EhFu9UVYO0Kl3MUHEOZtdtiCSuLMCLl0f6FcTWHfdQ+C/vf+S+dEG25zSFgVkSHQ5MrY8bLCl8jW8g4MEbkPt/v3nMa4OZnw2pc6J5nZty+MxR+R0LxkqZex3hmgWC5sydT+tRnjy6jsG61FWi4lLdrhEbYEsvHLY9YdguIfAMW8/iyiDXUXDkYMWsb4ztugAvKqjg1Hox92g406k0h9oKyzJWt8ebM5Kk6/V08MneA69gzX3QMoJO51r2TjE/3VK6X+b5PN5yFzAztSKgM6HsUDXGLpyVkTnyGMNU76hYvKz60qCuSM355h3RE3+bhDFUuYG4iN/0C3whyzvafYYZYlNZMybnBNR8uU4O/CMKbIsRo2aoiZju2HAuPEJwyPMu/gG8B0I8qjoaZ4pOI5R8bPgorSbDKEn8W38HboLRxcaJvhIdsCLWKVdd1PtsDp7p+VBWIdEyouSCguYz+J4HcKYpjfRmkWmTlioOzQIxNGwBSEtOzew2PDMpZVxtn1D6M/u6JZwFnKVQDEfMGgNrre8kCF90oOpbek12KuR+BYVBiTajo0LxhQeuDvxLyLKKLNNkrK74OITRVFalnlwqGq21ZVM2C7hzvI=
+    - git config --global user.email "romankisilo@gmail.com"
+    - git config --global user.name "romankisil"
+    - git config credential.helper "store --file=.git/credentials"
+    - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+    - git clone https://$GH_TOKEN@github.com/romankisil/bitgapp.com.git
+    - cp -r build/* bitgapp.com/eqmac/
+    - cd bitgapp.com/
+    - git add --all
+    - git commit -m 'update eqmac'
+    - git push origin master
