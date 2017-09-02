@@ -13,10 +13,9 @@ script:
 after_script:
     - git config --global user.email "romankisilo@gmail.com"
     - git config --global user.name "romankisil"
-    - git clone https://github.com/romankisil/bitgapp.com.git
+    - git clone https://$GH_TOKEN@github.com/romankisil/bitgapp.com.git
     - cp -R build/ bitgapp.com/eqmac/
     - cd bitgapp.com/
     - git add --all
     - git commit -m 'update eqmac'
-    - git remote set-url origin https://${GH_TOKEN}@github.com/romankisil/bitgapp.com.git
     - git push origin master
