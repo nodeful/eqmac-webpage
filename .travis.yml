@@ -8,14 +8,15 @@ before_script:
     - npm test
 
 script:
-    - npm build
+    - gulp build
 
 after_script:
     - git config --global user.email "travis@travis-ci.org"
-    - git config --global user.name "Travis CI
-    - git clone https://${GH_TOKEN}@github.com/romankisil/bitgapp.com.git
+    - git config --global user.name "Travis CI"
+    - git clone https://github.com/romankisil/bitgapp.com.git
     - cp -R build/ bitgapp.com/eqmac/
     - cd bitgapp.com/
+    - git remote set-url origin https://${GH_TOKEN}@github.com/romankisil/bitgapp.com.git
     - git push origin master
 
 env:
