@@ -9,3 +9,15 @@ before_script:
 
 script:
     - npm build
+
+after_script:
+    - git config --global user.email "travis@travis-ci.org"
+    - git config --global user.name "Travis CI
+    - git clone https://${GH_TOKEN}github.com/romankisil/bitgapp.com.git
+    - cp -R build/ bitgapp.com/eqmac/
+    - cd bitgapp.com/
+    - git push origin master
+
+env:
+  global:
+    secure: "lmCGbyAN2hJ2DKJKnv/wi8no6m39yPF7tyr75b8NsKljlG7Mwo7jk7pPwHpthcxaO4KKkQMCqvHrZ7dWOyoFwsGR+8Yt7in3YEpOdcCCGaqvV2HeoeQUN8u/qTX2cfCFCNK2ASq5lAvA2dFIqgw0TU0xDTO9CvGM1Lj6c1gm5fca1xBkZv6vxdZ/bsyiD6SC8V4YuXThPRy7kzpF+s1hPZ5XnE5TWB2wHg9DdoAPRW8zJI7yT9IoOvBwpnbjNa3CytuyRdmdFzNmBO/nZGLdBZi1FuEmd8Te5H1XHgruTYvpKegdx3EHq+Guhr+8UWFCDCXrn7DKrmVALzSpSOoRPX1BRczBR1Rln6Lu457Uqy+7sRGvt6wlG2bMe8VQOm6eQ+H/CxxDQCPI6QmyWOHjG5zNIL98SdaxcXOJ/H7GrlwkD1W6gIvz63mDbAKQu2F5C7W1/gSk7xoegLALf3JD8ZZ/KyAxNceviXt7P5p4x5oghEs3qSUqm58cPAyPp6Pcnrg48DHpy9+2CgbNqw/fnlI9MiyvTmOMqaWHRXl2L5f/flJjeIpSwM83q8JkvlJcvqaTZiiVSR1ey2yNPjGvJbWyYKr2eDhnSlYA/navYYNUBF2jxyKIgMKye7EMZXiKdvizBxXzpRMCuzxS/01sBWDXK95CSYRkdLVpuPRNy8Q="

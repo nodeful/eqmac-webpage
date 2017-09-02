@@ -1,10 +1,11 @@
 ### eqMac2 WebPage https://bitgapp.com/eqmac
-Standalone source-code that gets compiled with Gulp and the Build is then added to a private bitgapp.com website repo.
-
+Standalone source-code that gets compiled with Gulp and the Build is then added to a romankisil/bitgapp.com website repo.
+<p align="left">
+  <a href="https://travis-ci.org/romankisil/eqmac-webpage"><img src="https://travis-ci.org/romankisil/eqmac-webpage.svg?branch=master" alt="travis"></a>
+  <a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a>
+</p>
 Click [HERE](https://github.com/romankisil/eqMac2) if you are looking for the eqMac2 app repo.
 ___
-There's no CI for now. I will upload the source manually.
-
 ### Install and build
 You need to have NodeJS and NPM installed. [Download Here](https://nodejs.org/)
 ```
