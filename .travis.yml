@@ -16,6 +16,8 @@ after_script:
     - git clone https://github.com/romankisil/bitgapp.com.git
     - cp -R build/ bitgapp.com/eqmac/
     - cd bitgapp.com/
+    - git add --all
+    - git commit -m 'update eqmac'
     - git remote set-url origin https://${GH_TOKEN}@github.com/romankisil/bitgapp.com.git
     - git push origin master
 
