@@ -1,20 +1,28 @@
 {
   "name": "eqmac-webpage",
   "version": "1.0.0",
-  "scripts": {},
+  "scripts": {
+    "test": "standard",
+    "build": "gulp build"
+  },
   "dependencies": {
     "angular": "^1.6.3",
     "angular-scroll": "^1.0.2",
     "angularjs-slider": "^6.2.2"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
     "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^3.1.1",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
-    "merge-stream": "^1.0.1"
+    "merge-stream": "^1.0.1",
+    "standard": "^10.0.3"
   }
 }

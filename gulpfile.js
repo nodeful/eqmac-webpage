@@ -3,14 +3,15 @@
  */
 'use strict'
 
-var gulp = require('gulp')
-var concat = require('gulp-concat')
-var sass = require('gulp-sass')
-var minifyCss = require('gulp-cssnano')
-var minifyJs = require('gulp-uglify')
-var minifyHtml = require('gulp-htmlmin')
-var merge = require('merge-stream')
-var imagemin = require('gulp-imagemin')
+const gulp = require('gulp')
+const concat = require('gulp-concat')
+const sass = require('gulp-sass')
+const minifyCss = require('gulp-cssnano')
+const minifyJs = require('gulp-uglify')
+const minifyHtml = require('gulp-htmlmin')
+const merge = require('merge-stream')
+const imagemin = require('gulp-imagemin')
+const babel = require('gulp-babel')
 
 gulp.task('index', function () {
   gulp.src('src/index.html')
@@ -24,10 +25,10 @@ gulp.task('index', function () {
 })
 
 gulp.task('css', function () {
-  var compiledSass = gulp.src('src/scss/style.scss')
+  const compiledSass = gulp.src('src/scss/style.scss')
     .pipe(sass())
 
-  var cssLibs = gulp.src([
+  const cssLibs = gulp.src([
     './node_modules/angularjs-slider/dist/rzslider.min.css'
   ])
 
@@ -39,14 +40,24 @@ gulp.task('css', function () {
     .pipe(gulp.dest('./build/css/'))
 })
 
-gulp.task('js', function () {
+gulp.task('libJS', function () {
   gulp.src([
     './node_modules/angular/angular.min.js',
     './node_modules/angular-scroll/angular-scroll.min.js',
-    './node_modules/angularjs-slider/dist/rzslider.min.js',
-    './src/js/**/*.js'
-  ]).pipe(concat('main.min.js'))
+    './node_modules/angularjs-slider/dist/rzslider.min.js'
+  ]).pipe(concat('lib.min.js'))
+    .pipe(gulp.dest('./build/js/'))
+})
+
+gulp.task('js', (done) => {
+  gulp.src('./src/js/**/*.js')
+    .pipe(babel({
+      'presets': [
+        ['es2015']
+      ]
+    }))
     .pipe(minifyJs())
+    .pipe(concat('main.min.js'))
     .pipe(gulp.dest('./build/js/'))
 })
 
@@ -68,7 +79,7 @@ gulp.task('watch', function () {
   gulp.watch('./src/img/**/*', ['img'])
 })
 
-gulp.task('build', ['index', 'css', 'js', 'img', 'fonts'])
+gulp.task('build', ['index', 'css', 'libJS', 'js', 'img', 'fonts'])
 
 gulp.task('build-watch', ['build', 'watch'])
 
