@@ -75,8 +75,7 @@
   <script>
     var facebookPageId = "EQMAC-Free-Audio-Equalizer-for-Mac-OSX-717910878417410";
   </script>
-  <script type="text/javascript"
-    src="https://messengerify.me/api/chat-head/embed.js"></script>
+  <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="d43e2906-97e3-4c50-82ea-6fa04383b983";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 </head>
 
 <body ng-app="eqMac"
@@ -99,6 +98,7 @@
   <div id="header">
     <div class="left">
       <a href="https://bitgapp.com">Bitgapp</a>
+      <div class="fb-like" data-href="https://bitgapp.com/eqmac" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
     </div>
 
   </div>
@@ -150,7 +150,6 @@
             </a>
       </div>
       <br>
-      <div class="fb-like" data-href="https://bitgapp.com/eqmac" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
     </div>
   </div>
 
@@ -261,22 +260,23 @@
 
         <div class="crypto-options">
           <div class="crypto-option">
-            <img src="img/crypto-wallet-bitcoin.png" />
+            <img src="img/bitcoin-logo.png"/>
             <span>17gJwkLy76YTRFdTBC6VebHZemDtGcF5se</span>
-
+            <img ng-show="c.showQR" src="img/bitcoin-qr.png" />
           </div>
+
           <div class="crypto-option">
-            <img src="img/crypto-wallet-ethereum.png" />
+            <img src="img/ethereum-logo.png"/>
             <span>0x41c2989d997FDfdCBfb9Fd4bA8373A25482e1bb7</span>
-
+            <img ng-show="c.showQR" src="img/ethereum-qr.png"/>
           </div>
           <div class="crypto-option">
-            <img src="img/crypto-wallet-litecoin.png" />
-
+            <img src="img/litecoin-logo.png"/>
             <span>LQkcHPKLKZ6sJfrr9GRZMYA2DHpYSpb6wg</span>
-
+            <img ng-show="c.showQR" src="img/litecoin-qr.png"/>
           </div>
         </div>
+        <a href="" ng-click="c.showQR = !c.showQR">{{c.showQR ? 'Hide' : 'Show'}} QR</a>
 
         <h1>You can also support by sharing your intelligence!</h1>
         <br>
@@ -289,6 +289,7 @@
         <br>
         <h2>If you are a <span class="white">Web Front-End</span> developer || <span class="white">UI/UX</span> designer:</h2>
         <h2>You can contribute on <a class="white" href="https://github.com/romankisil/eqmac-webpage" target="_blank">romankisil/eqmac-webpage</a> repo!</h2>
+
       </div>
     </div>
   </div>
