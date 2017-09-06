@@ -37,6 +37,8 @@
     href="img/favicon.ico"
     type="image/x-icon">
 
+  <link rel="stylesheet"
+    href="https://checkout.stripe.com/v3/checkout/button.css"></link>
   <link href="css/main.min.css"
     rel="stylesheet">
   <script src="js/lib.min.js"></script>
@@ -75,7 +77,17 @@
   <script>
     var facebookPageId = "EQMAC-Free-Audio-Equalizer-for-Mac-OSX-717910878417410";
   </script>
-  <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="d43e2906-97e3-4c50-82ea-6fa04383b983";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+  <script type="text/javascript">
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "d43e2906-97e3-4c50-82ea-6fa04383b983";
+    (function() {
+      d = document;
+      s = d.createElement("script");
+      s.src = "https://client.crisp.chat/l.js";
+      s.async = 1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  </script>
 </head>
 
 <body ng-app="eqMac"
@@ -98,7 +110,13 @@
   <div id="header">
     <div class="left">
       <a href="https://bitgapp.com">Bitgapp</a>
-      <div class="fb-like" data-href="https://bitgapp.com/eqmac" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+      <div class="fb-like"
+        data-href="https://bitgapp.com/eqmac"
+        data-layout="button_count"
+        data-action="like"
+        data-size="small"
+        data-show-faces="true"
+        data-share="true"></div>
     </div>
 
   </div>
@@ -118,7 +136,8 @@
       <br>
       <a ng-href="{{downloadLink}}"
         ng-click="download()">
-        <div class="btn" ng-class="downloadLink ? btn-bordered : btn-disabled">
+        <div class="btn"
+          ng-class="downloadLink ? btn-bordered : btn-disabled">
           <span>Download</span>
         </div>
       </a>
@@ -129,7 +148,8 @@
         </div>
       </a>
       <br>
-      <span ng-show="releaseTag && releaseDate" class="small no-margin ligth-gray">Build {{releaseTag}} released on {{releaseDate}}</span>
+      <span ng-show="releaseTag && releaseDate"
+        class="small no-margin ligth-gray">Build {{releaseTag}} released on {{releaseDate}}</span>
       <p>{{c.getFormattedInt(c.downloads)}} Downloads</p>
 
       <div class="social-links">
@@ -229,10 +249,12 @@
           <!--<div class="hidder" ng-hide="false"></div>-->
           <div class="option"
             ng-show="c.stripeLoaded">
-            <a href=""
-              ng-click="c.donateWithStripe();">
-                        <img src="img/stripe.png">
-                    </a><br>
+            <button id="customButton"
+              ng-click="c.donateWithStripe();"
+              class="stripe-button-el">
+                <span style="display: block; min-height: 30px;">Donate with a Card</span>
+            </button>
+            <br>
             <span>Recommended</span>
           </div>
           <div class="option"
@@ -262,23 +284,28 @@
 
         <div class="crypto-options">
           <div class="crypto-option">
-            <img src="img/bitcoin-logo.png"/>
+            <img src="img/bitcoin-logo.png" />
             <span>17gJwkLy76YTRFdTBC6VebHZemDtGcF5se</span>
-            <img ng-show="c.showQR" src="img/bitcoin-qr.png" />
+            <img ng-show="c.showQR"
+              src="img/bitcoin-qr.png" />
           </div>
 
           <div class="crypto-option">
-            <img src="img/ethereum-logo.png"/>
+            <img src="img/ethereum-logo.png" />
             <span>0x41c2989d997FDfdCBfb9Fd4bA8373A25482e1bb7</span>
-            <img ng-show="c.showQR" src="img/ethereum-qr.png"/>
+            <img ng-show="c.showQR"
+              src="img/ethereum-qr.png" />
           </div>
           <div class="crypto-option">
-            <img src="img/litecoin-logo.png"/>
+            <img src="img/litecoin-logo.png" />
             <span>LQkcHPKLKZ6sJfrr9GRZMYA2DHpYSpb6wg</span>
-            <img ng-show="c.showQR" src="img/litecoin-qr.png"/>
+            <img ng-show="c.showQR"
+              src="img/litecoin-qr.png" />
           </div>
         </div>
-        <a href="" ng-click="c.showQR = !c.showQR">{{c.showQR ? 'Hide' : 'Show'}} QR</a>
+        <a href=""
+        class="darker-gray"
+          ng-click="c.showQR = !c.showQR">{{c.showQR ? 'Hide' : 'Show'}} QR</a>
 
         <h1>You can also support by sharing your intelligence!</h1>
         <br>
