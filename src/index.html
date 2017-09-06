@@ -116,9 +116,9 @@
       <span>Improves your Audio Listening on OSX / macOS<br>
             Experience Music on your Mac, how it's meant to be</span>
       <br>
-      <a href=""
+      <a ng-href="{{downloadLink}}"
         ng-click="download()">
-        <div class="btn btn-bordered">
+        <div class="btn" ng-class="downloadLink ? btn-bordered : btn-disabled">
           <span>Download</span>
         </div>
       </a>
@@ -128,6 +128,8 @@
           <span>Contribute</span>
         </div>
       </a>
+      <br>
+      <span ng-show="releaseTag && releaseDate" class="small no-margin ligth-gray">Build {{releaseTag}} released on {{releaseDate}}</span>
       <p>{{c.getFormattedInt(c.downloads)}} Downloads</p>
 
       <div class="social-links">
@@ -188,7 +190,7 @@
           <span class="special-text no-margin">Price</span>
         </th>
         <th class="free last">
-          <a>
+          <a href="https://www.dropbox.com/s/zj9a9ao9xe6250e/eqMac.dmg?dl=1">
             <div class="btn no-margin btn-disabled">
               <span>Out of date</span>
             </div>
@@ -196,7 +198,7 @@
           <span class="special-text no-margin">Free</span>
         </th>
         <th class="full full-last">
-          <a href=""
+          <a ng-href="{{downloadLink}}"
             ng-click="download()">
             <div class="btn btn-bordered no-margin">
               <span>Download</span>

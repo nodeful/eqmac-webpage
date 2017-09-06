@@ -32,8 +32,20 @@
       $rootScope.animateToDiv('donate')
     }
 
-    $rootScope.download = function () {
-      RemoteDataService.download()
-    }
+    $rootScope.releaseTag = null
+    $rootScope.downloadLink = null
+    $rootScope.releaseDate = null
+
+    RemoteDataService.getLatestRelease()
+      .then(release => {
+        $rootScope.releaseTag = release.tag_name
+        $rootScope.downloadLink = release.assets[0].browser_download_url
+        $rootScope.releaseDate = new Date(release.published_at).toISOString().slice(0, 10)
+      }).catch(err => {
+        $rootScope.releaseTag = 'v2.0.6'
+        $rootScope.downloadLink = `https://github.com/romankisil/eqMac2/releases/download/${$rootScope.releaseTag}/eqMac2.dmg`
+        $rootScope.releaseDate = new Date('2017-08-02T20:56:41Z').toISOString().slice(0, 10)
+        console.error(err)
+      })
   }])
 })()

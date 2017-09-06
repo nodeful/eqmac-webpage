@@ -32,17 +32,8 @@
       return get('https://api.github.com/repos/romankisil/eqMac2', true)
     }
 
-    RemoteDataService.download = function () {
-      return get('/download')
-        .then(function (resp) {
-          if (resp && resp.download_link) {
-            $window.location.href = resp.download_link
-          }
-        }, function (err) {
-          // fallback download url. This way we can't track downloads but at least they can download the App
-          console.error(err)
-          $window.location.href = CONST.BINARY_URL
-        })
+    RemoteDataService.getLatestRelease = function () {
+      return get('https://api.github.com/repos/romankisil/eqmac2/releases/latest', true)
     }
 
     var get = function (url, urlOverride) {

@@ -36,6 +36,10 @@ $skew-degrees: 2deg;
   text-align: center;
 }
 
+.small{
+  font-size: 0.5vw * $scale;
+}
+
 .skew-right{
   -webkit-transform: skewY($skew-degrees);
   -moz-transform: skewY($skew-degrees);
