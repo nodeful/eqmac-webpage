@@ -22,7 +22,7 @@
 
     Localizer.fetchTranslationsForLocale = locale => {
       if (Localizer.translations.hasOwnProperty(locale)) return $q.resolve()
-      return $http.get(`/locales/${locale}.json`)
+      return $http.get(`${window.location.href}locales/${locale}.json`)
         .then(resp => {
           if (resp.status === 200) {
             Localizer.translations[locale] = resp.data
