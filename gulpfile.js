@@ -59,7 +59,7 @@ gulp.task('js', (done) => {
         ['es2015']
       ]
     }))
-    // .pipe(minifyJs())
+    .pipe(minifyJs())
     .pipe(concat('main.min.js'))
     .pipe(gulp.dest('./build/js/'))
     .on('end', done)
