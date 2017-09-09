@@ -13,7 +13,7 @@ const merge = require('merge-stream')
 const imagemin = require('gulp-imagemin')
 const babel = require('gulp-babel')
 
-gulp.task('index', function () {
+gulp.task('index', done => {
   gulp.src('src/index.html')
     .pipe(minifyHtml({
       empty: true,
@@ -22,9 +22,10 @@ gulp.task('index', function () {
       collapseWhitespace: true
     }))
     .pipe(gulp.dest('./build/'))
+    .on('end', done)
 })
 
-gulp.task('css', function () {
+gulp.task('css', done => {
   const compiledSass = gulp.src('src/scss/style.scss')
     .pipe(sass())
 
@@ -38,15 +39,17 @@ gulp.task('css', function () {
     }))
     .pipe(concat('main.min.css'))
     .pipe(gulp.dest('./build/css/'))
+    .on('end', done)
 })
 
-gulp.task('libJS', function () {
+gulp.task('libJS', done => {
   gulp.src([
     './node_modules/angular/angular.min.js',
     './node_modules/angular-scroll/angular-scroll.min.js',
     './node_modules/angularjs-slider/dist/rzslider.min.js'
   ]).pipe(concat('lib.min.js'))
     .pipe(gulp.dest('./build/js/'))
+    .on('end', done)
 })
 
 gulp.task('js', (done) => {
@@ -56,30 +59,40 @@ gulp.task('js', (done) => {
         ['es2015']
       ]
     }))
-    .pipe(minifyJs())
+    // .pipe(minifyJs())
     .pipe(concat('main.min.js'))
     .pipe(gulp.dest('./build/js/'))
+    .on('end', done)
 })
 
-gulp.task('img', function (done) {
+gulp.task('locales', done => {
+  gulp.src('./src/locales/**/*.json')
+    .pipe(gulp.dest('./build/locales/'))
+    .on('end', done)
+})
+
+gulp.task('img', done => {
   gulp.src('./src/img/**/*')
     .pipe(imagemin())
     .pipe(gulp.dest('./build/img/'))
+    .on('end', done)
 })
 
-gulp.task('fonts', function (done) {
+gulp.task('fonts', done => {
   gulp.src('./src/fonts/**/*')
     .pipe(gulp.dest('./build/fonts/'))
+    .on('end', done)
 })
 
 gulp.task('watch', function () {
   gulp.watch('./src/scss/**/*', ['css'])
   gulp.watch('./src/js/**/*', ['js'])
+  gulp.watch('./src/locales/**/*.json', ['locales'])
   gulp.watch('./src/index.html', ['index'])
   gulp.watch('./src/img/**/*', ['img'])
 })
 
-gulp.task('build', ['index', 'css', 'libJS', 'js', 'img', 'fonts'])
+gulp.task('build', ['index', 'css', 'libJS', 'js', 'locales', 'img', 'fonts'])
 
 gulp.task('build-watch', ['build', 'watch'])
 

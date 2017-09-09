@@ -1,5 +1,12 @@
 $skew-degrees: 2deg;
 
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0 1vw;
+}
+
 .no-margin{
   margin: 0 !important;
 }
@@ -160,7 +167,7 @@ $skew-degrees: 2deg;
 
 
   #header{
-    top: 1vw * $scale;
+    top: .5vw * $scale;
     position: absolute;
     width: 100vw;
     background-color: transparent;

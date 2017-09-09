@@ -19,33 +19,61 @@
     }
   ])
 
-  app.run(['$rootScope', '$timeout', '$document', 'RemoteDataService', function ($rootScope, $timeout, $document, RemoteDataService) {
-    $rootScope.animateToDiv = function (id) {
+  const onRun = (
+    $rootScope,
+    $timeout,
+    $document,
+    RemoteDataService,
+    Localizer,
+    $window
+  ) => {
+    const rs = $rootScope
+
+    rs.supportedLocales = Localizer.supportedLocales
+    rs.selectedLocale = Localizer.userLocale
+
+    Localizer.localizePage()
+
+    rs.changeLocale = () => {
+      Localizer.userLocale = rs.selectedLocale
+      Localizer.localizePage()
+    }
+
+    rs.animateToDiv = function (id) {
       $timeout(function () {
         var someElement = window.angular.element(document.getElementById(id))
         $document.scrollToElement(someElement, 0, 1000)
       })
     }
 
-    console.log(window.location.hash)
     if (window.location.hash === '#/donate') {
-      $rootScope.animateToDiv('donate')
+      rs.animateToDiv('donate')
     }
 
-    $rootScope.releaseTag = null
-    $rootScope.downloadLink = null
-    $rootScope.releaseDate = null
+    rs.releaseTag = null
+    rs.downloadLink = null
+    rs.releaseDate = null
 
     RemoteDataService.getLatestRelease()
       .then(release => {
-        $rootScope.releaseTag = release.tag_name
-        $rootScope.downloadLink = release.assets[0].browser_download_url
-        $rootScope.releaseDate = new Date(release.published_at).toISOString().slice(0, 10)
+        rs.releaseTag = release.tag_name
+        rs.downloadLink = release.assets[0].browser_download_url
+        rs.releaseDate = new Date(release.published_at).toISOString().slice(0, 10)
       }).catch(err => {
-        $rootScope.releaseTag = 'v2.0.6'
-        $rootScope.downloadLink = `https://github.com/romankisil/eqMac2/releases/download/${$rootScope.releaseTag}/eqMac2.dmg`
-        $rootScope.releaseDate = new Date('2017-08-02T20:56:41Z').toISOString().slice(0, 10)
+        rs.releaseTag = 'v2.0.6'
+        rs.downloadLink = `https://github.com/romankisil/eqMac2/releases/download/${$rootScope.releaseTag}/eqMac2.dmg`
+        rs.releaseDate = new Date('2017-08-02T20:56:41Z').toISOString().slice(0, 10)
         console.error(err)
       })
-  }])
+  }
+
+  app.run([
+    '$rootScope',
+    '$timeout',
+    '$document',
+    'RemoteDataService',
+    'Localizer',
+    '$window',
+    onRun
+  ])
 })()
