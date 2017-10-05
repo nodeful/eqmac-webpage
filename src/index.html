@@ -49,6 +49,8 @@
     href="https://checkout.stripe.com/v3/checkout/button.css"></link>
   <link href="css/main.min.css"
     rel="stylesheet">
+  <script src="https://cdn.ravenjs.com/3.18.1/raven.min.js"
+    crossorigin="anonymous"></script>
   <script src="js/lib.min.js"></script>
   <script src="js/main.min.js"></script>
   <meta name="viewport"
@@ -96,6 +98,9 @@
       d.getElementsByTagName("head")[0].appendChild(s);
     })();
   </script>
+  <script>
+    Raven.config('https://aaa63256850a409fa57292f4353013cf@sentry.io/226412').install()
+  </script>
 </head>
 
 <body id="app">
@@ -121,7 +126,8 @@
         ng-change="changeLocale()">
         <option ng-repeat="locale in supportedLocales" value="{{locale.code}}">{{locale.flag}} {{locale.language}}</option>
       </select>
-      <a href="https://github.com/romankisil/eqmac-webpage/blob/master/CONTRIBUTING.md" target="_blank">+</a>
+      <a href="https://github.com/romankisil/eqmac-webpage/blob/master/CONTRIBUTING.md"
+        target="_blank">+</a>
     </div>
 
   </div>
@@ -177,13 +183,13 @@
                 <span>Twitter</span>
             </a>
 
-            <div class="fb-like"
-              data-href="https://bitgapp.com/eqmac"
-              data-layout="button_count"
-              data-action="like"
-              data-size="small"
-              data-show-faces="true"
-              data-share="true"></div>
+        <div class="fb-like"
+          data-href="https://bitgapp.com/eqmac"
+          data-layout="button_count"
+          data-action="like"
+          data-size="small"
+          data-show-faces="true"
+          data-share="true"></div>
       </div>
       <br>
     </div>
@@ -200,74 +206,91 @@
       </tr>
 
       <tr class="bg-darker-gray">
-        <th class="featured-text" name="USHFL">
+        <th class="featured-text"
+          name="USHFL">
           System Audio EQ
         </th>
         <th class="v1">
-          <img class="boolean" src="img/tick.png">
+          <img class="boolean"
+            src="img/tick.png">
         </th>
         <th class="full">
-          <img class="boolean" src="img/tick.png">
+          <img class="boolean"
+            src="img/tick.png">
         </th>
       </tr>
       <tr>
-        <th class="featured-text" name="WPCBS">
+        <th class="featured-text"
+          name="WPCBS">
           Built-In Speaker Support
         </th>
         <th class="v1">
-          <img class="boolean" src="img/tick.png">
+          <img class="boolean"
+            src="img/tick.png">
         </th>
         <th class="full">
-          <img class="boolean" src="img/tick.png">
+          <img class="boolean"
+            src="img/tick.png">
         </th>
       </tr>
       <tr class="bg-darker-gray">
-        <th class="featured-text" name="QLSNI">
+        <th class="featured-text"
+          name="QLSNI">
           3.5mm Line-out Support
         </th>
         <th class="v1">
-          <img class="boolean" src="img/tick.png">
+          <img class="boolean"
+            src="img/tick.png">
         </th>
         <th class="full">
-          <img class="boolean" src="img/tick.png">
+          <img class="boolean"
+            src="img/tick.png">
         </th>
       </tr>
       <tr>
-        <th class="featured-text" name="YBAQI">
+        <th class="featured-text"
+          name="YBAQI">
           New Design & Stable Build
         </th>
         <th class="v1"></th>
         <th class="full">
-          <img class="boolean" src="img/tick.png">
+          <img class="boolean"
+            src="img/tick.png">
         </th>
       </tr>
       <tr class="bg-darker-gray">
-        <th class="featured-text" name="NDKOW">
+        <th class="featured-text"
+          name="NDKOW">
           Future Updates
         </th>
         <th class="v1"></th>
         <th class="full">
-          <img class="boolean" src="img/tick.png">
+          <img class="boolean"
+            src="img/tick.png">
         </th>
       </tr>
       <tr>
         <th class="featured-text full-first">
           <span name="TYOWK">All Devices Support</span>
           <br>
-          <span class="special-text no-margin" name="FJWPG">Bluetooth, USB, AirPlay, HDMI and more.</span>
+          <span class="special-text no-margin"
+            name="FJWPG">Bluetooth, USB, AirPlay, HDMI and more.</span>
         </th>
         <th class="v1"></th>
         <th class="full">
-          <img class="boolean" src="img/tick.png">
+          <img class="boolean"
+            src="img/tick.png">
         </th>
       </tr>
       <tr class="bg-darker-gray">
-        <th class="featured-text" name="QPFSD">
+        <th class="featured-text"
+          name="QPFSD">
           31 Band EQ
         </th>
         <th class="v1"></th>
         <th class="full">
-          <p class="no-margin" name="SDFRW">Coming Soon</p>
+          <p class="no-margin"
+            name="SDFRW">Coming Soon</p>
         </th>
       </tr>
       <tr>
