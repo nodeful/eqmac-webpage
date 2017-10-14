@@ -136,7 +136,7 @@ select{
   .github-corner .octo-arm {
     animation: octocat-wave 1s ease-in-out;
     -webkit-animation-iteration-count: infinite; //safari
-    animation-iteration-count: infinite;
+    animation-iteration-count: 3;
     animation-delay: 1s;
 
     @keyframes octocat-wave {
@@ -167,8 +167,8 @@ select{
 
   #google_translate_element{
     position: absolute;
-    left: .5vw;
-    top: 1vw;
+    left: 1vw;
+    top: 0.5vw;
     z-index: 100;
   }
 
