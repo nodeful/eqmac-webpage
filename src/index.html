@@ -121,18 +121,20 @@
   <script type="text/javascript"
     src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5849523548ee27b6"></script>
 
-  <div id="header">
-    <div class="left">
-      <a href="https://bitgapp.com">Bitgapp</a>
-      <select ng-model="selectedLocale"
-        ng-change="changeLocale()">
-        <option ng-repeat="locale in supportedLocales" value="{{locale.code}}">{{locale.flag}} {{locale.language}}</option>
-      </select>
-      <a href="https://github.com/romankisil/eqmac-webpage/blob/master/CONTRIBUTING.md"
-        target="_blank">+</a>
-    </div>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT,
+          gaTrack: true,
+          gaId: 'UA-96287398-1'
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-  </div>
 
   <div id="overview"
     ng-controller="OverviewCtrl as c">
@@ -440,20 +442,6 @@
         target="_blank"><span name="RZLIC">Contributors</span></a>
     </p>
   </div>
-
-  <div id="google_translate_element"></div>
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT,
-        gaTrack: true,
-        gaId: 'UA-96287398-1'
-      }, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 
