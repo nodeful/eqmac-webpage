@@ -3,18 +3,15 @@
 
 <head>
   <title>Bitgapp | eqMac2</title>
-  <meta name="keywords"
-    content="
+  <meta content="
     equalizer,system-wide,audio,system,wide,OSX,mac,eqMac,eq,macos,sierra,eqMac2,bluetooth,airplay,dac,open,source,open-source,
     эквалайзер,системный,аудио,мак,макос,блютус,эйкплэй,цап,открытый,код,открытый-код
     ">
   <meta http-equiv="Content-Language"
     content="en,ru">
-  <meta name="description"
-    lang="en"
+  <meta lang="en"
     content="eqMac2 is a System-Wide Audio Equalizer for the Mac OSX & macOS. eqMac2 is Open-Source and is absolutely free for everyone.">
-  <meta name="description"
-    lang="ru"
+  <meta lang="ru"
     content="eqMac2 это Системный Аудио Эквалайзер для Mac OSX & macOS. eqMac2 является Открытым проектом и абсолютно бесплатный для всех.">
   <meta property="og:title"
     content="eqMac2 | Free Audio Equalizer for the Mac OSX" />
@@ -27,16 +24,11 @@
   <meta property="og:description"
     content="eqMac2 is a System-Wide Audio Equalizer for the Mac OSX & macOS. eqMac2 is Open-Source and is absolutely free for everyone." />
 
-  <meta name="twitter:card"
-    content="summary">
-  <meta name="twitter:title"
-    content="eqMac2 | Free Audio Equalizer for the Mac OSX">
-  <meta name="twitter:description"
-    content="eqMac2 is a System-Wide Audio Equalizer for the Mac OSX & macOS. eqMac2 is Open-Source and is absolutely free for everyone.">
-  <meta name="twitter:image"
-    content="https://bitgapp.com/eqmac/img/icon.jpg">
-  <meta name="twitter:url"
-    content="https://bitgapp.com/eqmac">
+  <meta content="summary">
+  <meta content="eqMac2 | Free Audio Equalizer for the Mac OSX">
+  <meta content="eqMac2 is a System-Wide Audio Equalizer for the Mac OSX & macOS. eqMac2 is Open-Source and is absolutely free for everyone.">
+  <meta content="https://bitgapp.com/eqmac/img/icon.jpg">
+  <meta content="https://bitgapp.com/eqmac">
 
   <link rel="shortcut icon"
     href="img/favicon.ico"
@@ -53,8 +45,7 @@
     crossorigin="anonymous"></script>
   <script src="js/lib.min.js"></script>
   <script src="js/main.min.js"></script>
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1">
   <script>
     (function(i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r;
@@ -121,19 +112,19 @@
   <script type="text/javascript"
     src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5849523548ee27b6"></script>
 
-    <div id="google_translate_element"></div>
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-          pageLanguage: 'en',
-          layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT,
-          gaTrack: true,
-          gaId: 'UA-96287398-1'
-        }, 'google_translate_element');
-      }
-    </script>
-    <script type="text/javascript"
-      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <div id="google_translate_element"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT,
+        gaTrack: true,
+        gaId: 'UA-96287398-1'
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
   <div id="overview"
@@ -144,41 +135,41 @@
       <img src="img/icon.jpg"
         class="icon">
       <h1>eqMac2</h1>
-      <h2 name="XFXKN">System-Wide Audio Equalizer for the Mac</h2>
-      <h3 name="CVOWT">Free & Open Source</h3>
-      <span name="GERBH">Improves your Audio Listening on OSX / macOS</span>
+      <h2>System-Wide Audio Equalizer for the Mac</h2>
+      <h3>Free & Open Source</h3>
+      <span>Improves your Audio Listening on OSX / macOS</span>
       <br>
-      <span name="XQHFJ">Experience Music on your Mac, how it is meant to be</span>
+      <span>Experience Music on your Mac, how it is meant to be</span>
       <br>
       <a ng-href="{{downloadLink}}"
         ng-click="download()">
         <div class="btn"
           ng-class="downloadLink ? btn-bordered : btn-disabled">
-          <span name="TCQMO">Download</span>
+          <span>Download</span>
         </div>
       </a>
       <a href=""
         ng-click="animateToDiv('donate')">
         <div class="btn bg-yellow">
-          <span name="DJEBH">Contribute</span>
+          <span>Contribute</span>
         </div>
       </a>
       <br>
       <span ng-show="releaseTag && releaseDate"
-        class="small no-margin ligth-gray"><span name="FMNDL">Build</span> {{releaseTag}} <span name="RDKNR">released on</span> {{releaseDate}}</span>
-      <p>{{c.getFormattedInt(c.downloads)}} <span name="TCQGO">Downloads</span></p>
+        class="small no-margin ligth-gray"><span>Build</span> {{releaseTag}} <span>released on</span> {{releaseDate}}</span>
+      <p>{{c.getFormattedInt(c.downloads)}} <span>Downloads</span></p>
 
       <div class="social-links">
         <a href="https://github.com/romankisil/eqMac2"
           target="_blank">
                 <img src="img/github.png">
-                <span>{{c.getFormattedInt(c.stargazers)}} <span name="RSLDO">stars</span></span>
+                <span>{{c.getFormattedInt(c.stargazers)}} <span>stars</span></span>
             </a>
 
         <a href="https://github.com/romankisil/eqMac2"
           target="_blank">
                 <img src="img/fork.png">
-                <span>{{c.getFormattedInt(c.forks)}} <span name="GKSHS">forks</span></span>
+                <span>{{c.getFormattedInt(c.forks)}} <span>forks</span></span>
             </a>
 
         <a href="https://twitter.com/romanbitgapp"
@@ -202,129 +193,127 @@
   <div id="features"
     class="skew-right"
     ng-controller="FeaturesCtrl as c">
-    <table class="feature-table unskew-container">
-      <tr class="titles">
-        <th name="CLNDQ">Features</th>
-        <th class="version v1">eqMac</th>
-        <th class="version full full-first">eqMac2</th>
-      </tr>
+    <div class="unskew-container">
+      <img class="image"
+        src="img/eqmac_31.jpg" />
+        <br><br><br>
+      <table class="feature-table">
+        <tr class="titles">
+          <th>Features</th>
+          <th class="version v1">eqMac</th>
+          <th class="version full full-first">eqMac2</th>
+        </tr>
 
-      <tr class="bg-darker-gray">
-        <th class="featured-text"
-          name="USHFL">
-          System Audio EQ
-        </th>
-        <th class="v1">
-          <img class="boolean"
-            src="img/tick.png">
-        </th>
-        <th class="full">
-          <img class="boolean"
-            src="img/tick.png">
-        </th>
-      </tr>
-      <tr>
-        <th class="featured-text"
-          name="WPCBS">
-          Built-In Speaker Support
-        </th>
-        <th class="v1">
-          <img class="boolean"
-            src="img/tick.png">
-        </th>
-        <th class="full">
-          <img class="boolean"
-            src="img/tick.png">
-        </th>
-      </tr>
-      <tr class="bg-darker-gray">
-        <th class="featured-text"
-          name="QLSNI">
-          3.5mm Line-out Support
-        </th>
-        <th class="v1">
-          <img class="boolean"
-            src="img/tick.png">
-        </th>
-        <th class="full">
-          <img class="boolean"
-            src="img/tick.png">
-        </th>
-      </tr>
-      <tr>
-        <th class="featured-text"
-          name="YBAQI">
-          New Design & Stable Build
-        </th>
-        <th class="v1"></th>
-        <th class="full">
-          <img class="boolean"
-            src="img/tick.png">
-        </th>
-      </tr>
-      <tr class="bg-darker-gray">
-        <th class="featured-text"
-          name="NDKOW">
-          Future Updates
-        </th>
-        <th class="v1"></th>
-        <th class="full">
-          <img class="boolean"
-            src="img/tick.png">
-        </th>
-      </tr>
-      <tr>
-        <th class="featured-text full-first">
-          <span name="TYOWK">All Devices Support</span>
-          <br>
-          <span class="special-text no-margin"
-            name="FJWPG">Bluetooth, USB, AirPlay, HDMI and more.</span>
-        </th>
-        <th class="v1"></th>
-        <th class="full">
-          <img class="boolean"
-            src="img/tick.png">
-        </th>
-      </tr>
-      <tr class="bg-darker-gray">
-        <th class="featured-text"
-          name="QPFSD">
-          31 Band EQ
-        </th>
-        <th class="v1"></th>
-        <th class="full">
-          <p class="no-margin"
-            name="SDFRW">Coming Soon</p>
-        </th>
-      </tr>
-      <tr>
-        <th class="last">
-          <span name="UCZSA">Ways to get</span>
-          <br><br>
-          <span class="special-text no-margin"
-            name="UDQGF">Price</span>
-        </th>
-        <th class="free last">
-          <a href="https://www.dropbox.com/s/zj9a9ao9xe6250e/eqMac.dmg?dl=1">
-            <div class="btn no-margin btn-disabled">
-              <span name="FPDKD">Out of date</span>
-            </div>
-          </a><br>
-          <span class="special-text no-margin"
-            name="TAJOA">Free</span>
-        </th>
-        <th class="full full-last">
-          <a ng-href="{{downloadLink}}"
-            ng-click="download()">
-            <div class="btn btn-bordered no-margin">
-              <span name="TCQMO">Download</span>
-            </div>
-          </a><br>
-          <span class="special-text no-margin"
-            name="TAJOA">Free</span>
-        </th>
-      </tr>
-    </table>
+        <tr class="bg-darker-gray">
+          <th class="featured-text">
+            System Audio EQ
+          </th>
+          <th class="v1">
+            <img class="boolean"
+              src="img/tick.png">
+          </th>
+          <th class="full">
+            <img class="boolean"
+              src="img/tick.png">
+          </th>
+        </tr>
+        <tr>
+          <th class="featured-text">
+            Built-In Speaker Support
+          </th>
+          <th class="v1">
+            <img class="boolean"
+              src="img/tick.png">
+          </th>
+          <th class="full">
+            <img class="boolean"
+              src="img/tick.png">
+          </th>
+        </tr>
+        <tr class="bg-darker-gray">
+          <th class="featured-text">
+            3.5mm Line-out Support
+          </th>
+          <th class="v1">
+            <img class="boolean"
+              src="img/tick.png">
+          </th>
+          <th class="full">
+            <img class="boolean"
+              src="img/tick.png">
+          </th>
+        </tr>
+        <tr>
+          <th class="featured-text">
+            New Design & Stable Build
+          </th>
+          <th class="v1"></th>
+          <th class="full">
+            <img class="boolean"
+              src="img/tick.png">
+          </th>
+        </tr>
+        <tr class="bg-darker-gray">
+          <th class="featured-text">
+            Future Updates
+          </th>
+          <th class="v1"></th>
+          <th class="full">
+            <img class="boolean"
+              src="img/tick.png">
+          </th>
+        </tr>
+        <tr>
+          <th class="featured-text full-first">
+            <span>All Devices Support</span>
+            <br>
+            <span class="special-text no-margin">Bluetooth, USB, AirPlay, HDMI and more.</span>
+          </th>
+          <th class="v1"></th>
+          <th class="full">
+            <img class="boolean"
+              src="img/tick.png">
+          </th>
+        </tr>
+        <tr class="bg-darker-gray">
+          <th class="featured-text">
+            31 Band EQ
+          </th>
+          <th class="v1"></th>
+          <th class="full">
+            <img class="boolean"
+              src="img/tick.png">
+          </th>
+        </tr>
+        <tr>
+          <th class="last">
+            <span>Ways to get</span>
+            <br><br>
+            <span class="special-text no-margin">Price</span>
+          </th>
+          <th class="free last">
+            <a href="https://www.dropbox.com/s/zj9a9ao9xe6250e/eqMac.dmg?dl=1">
+              <div class="btn no-margin btn-disabled">
+                <span>Out of date</span>
+              </div>
+            </a><br>
+            <span class="special-text no-margin">Free</span>
+          </th>
+          <th class="full full-last">
+            <a ng-href="{{downloadLink}}"
+              ng-click="download()">
+              <div class="btn btn-bordered no-margin">
+                <span>Download</span>
+              </div>
+            </a><br>
+            <span class="special-text no-margin">Free</span>
+          </th>
+        </tr>
+      </table>
+
+
+    </div>
+
   </div>
 
 
@@ -333,16 +322,15 @@
     ng-controller="DonateCtrl as c">
     <div class="unskew-container">
       <div ng-hide="c.fail || c.success || c.loading">
-        <h1 name="IPKGN">Support the Project</h1>
-        <p class="white"
-          name="VGSJJ">Donations help to pay for Hosting, Certificates, Development and make eqMac free and awesome for everyone!</p>
-        <h1 name="QQUEG">How much would you like to Donate?</h1>
+        <h1>Support the Project</h1>
+        <p class="white">Donations help to pay for Hosting, Certificates, Development and make eqMac free and awesome for everyone!</p>
+        <h1>How much would you like to Donate?</h1>
         <br><br>
         <rzslider class="donation-slider"
           rz-slider-model="c.slider.value"
           rz-slider-options="c.slider.options"></rzslider>
         <br><br><br>
-        <h3 name="LVDPD">Donate with:</h3>
+        <h3>Donate with:</h3>
         <div class="donation-options">
           <!--<div class="hidder" ng-hide="false"></div>-->
           <div class="option"
@@ -350,10 +338,10 @@
             <button id="customButton"
               ng-click="c.donateWithStripe();"
               class="stripe-button-el">
-                <span style="display: block; min-height: 30px;" name="ZGXAA">Donate with a Card</span>
+                <span style="display: block; min-height: 30px;">Donate with a Card</span>
             </button>
             <br>
-            <span name="PZBJU">Recommended</span>
+            <span>Recommended</span>
           </div>
           <div class="option"
             id="paypal-button"></div>
@@ -362,13 +350,13 @@
       </div>
       <div ng-show="c.success"
         class="success">
-        <h1 name="MXDIH">Success</h1>
-        <h2 name="EDVFB">Thanks for the support!</h2>
+        <h1>Success</h1>
+        <h2>Thanks for the support!</h2>
       </div>
       <div ng-show="c.fail"
         class="fail">
-        <h1 name="OKAWH">Failed</h1>
-        <h2 name="USIKC">Something went wrong during your Donation, you have not been charged. Please try again later :)</h2>
+        <h1>Failed</h1>
+        <h2>Something went wrong during your Donation, you have not been charged. Please try again later :)</h2>
       </div>
       <div ng-show="c.loading"
         class="loading">
@@ -377,8 +365,8 @@
 
       <br>
       <div ng-hide="c.loading || c.fail">
-        <h1 name="EIXVF">Or with Cryptocurrency:</h1>
-        <h2><span name="NNWXM">If you don't have a Crypto Wallet you can create one on</span> <a class="white" target="_blank" href="https://www.coinbase.com/join/5997520c66084b01fe059ad5">CoinBase.com</a></h2>
+        <h1>Or with Cryptocurrency:</h1>
+        <h2><span>If you don't have a Crypto Wallet you can create one on</span> <a class="white" target="_blank" href="https://www.coinbase.com/join/5997520c66084b01fe059ad5">CoinBase.com</a></h2>
 
         <div class="crypto-options">
           <div class="crypto-option">
@@ -404,25 +392,14 @@
         <a href=""
           class="darker-gray"
           ng-show="c.showQR"
-          name="OCHVZ"
           ng-click="c.showQR = !c.showQR">Hide QR</a>
         <a href=""
           class="darker-gray"
           ng-hide="c.showQR"
-          name="ZRRIP"
           ng-click="c.showQR = !c.showQR">Show QR</a>
 
-        <h1 name="EXHKR">You can also support by sharing your intelligence!</h1>
-        <br>
-        <h2><span name="XVFTB">If you are a</span>
-                <span class="white">Objective-C</span> ||
-                <span class="white">Swift</span> ||
-                <span class="white">C++</span> <span name="QLMBP">developer</span> ||
-                <span class="white">UI/UX</span> <span name="IPCAE">designer</span>:</h2>
-        <h2><span name="BPFRG">You can contribute on</span> <a class="white" href="https://github.com/romankisil/eqMac2" target="_blank">romankisil/eqMac2</a> <span name="IABNE">repo</span>!</h2>
-        <br>
-        <h2><span name="XVFTB">If you are a</span> <span class="white">Web Front-End</span> <span>developer</span> || <span class="white">UI/UX</span> <span name="IPCAE">designer</span>:</h2>
-        <h2><span name="BPFRG">You can contribute on</span> <a class="white" href="https://github.com/romankisil/eqmac-webpage" target="_blank">romankisil/eqmac-webpage</a> <span name="IABNE">repo</span>!</h2>
+        <h2>You can also always help by sharing this page with your friends.</h2>
+        <h2 class="white">Just click on your favourite social platform in the black menu on the left</h2>
 
       </div>
     </div>
@@ -432,14 +409,14 @@
 
   <div id="footer">
     <p>
-      <span name="AIWQP">Made by</span>
+      <span>Made by</span>
       <a class="yellow"
-        href="https://twitter.com/romanbitgapp"
-        target="_blank">@RomanKisil</a>
-      <span name="PTXIU">and other</span>
+        href="https://twitter.com/nodeful"
+        target="_blank">@nodeful</a>
+      <span>and other</span>
       <a class="yellow"
         href="https://github.com/romankisil/eqMac2/graphs/contributors"
-        target="_blank"><span name="RZLIC">Contributors</span></a>
+        target="_blank"><span>Contributors</span></a>
     </p>
   </div>
 

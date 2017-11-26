@@ -302,6 +302,10 @@ select{
         border-bottom: .2vw solid $yellow !important;
       }
     }
+
+    .image{
+      max-width: 50vw * $scale;
+    }
   }
 
   #donate{

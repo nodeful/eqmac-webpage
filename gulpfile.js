@@ -65,12 +65,6 @@ gulp.task('js', (done) => {
     .on('end', done)
 })
 
-gulp.task('locales', done => {
-  gulp.src('./src/locales/**/*.json')
-    .pipe(gulp.dest('./build/locales/'))
-    .on('end', done)
-})
-
 gulp.task('img', done => {
   gulp.src('./src/img/**/*')
     .pipe(imagemin())
@@ -87,12 +81,11 @@ gulp.task('fonts', done => {
 gulp.task('watch', function () {
   gulp.watch('./src/scss/**/*', ['css'])
   gulp.watch('./src/js/**/*', ['js'])
-  gulp.watch('./src/locales/**/*.json', ['locales'])
   gulp.watch('./src/index.html', ['index'])
   gulp.watch('./src/img/**/*', ['img'])
 })
 
-gulp.task('build', ['index', 'css', 'libJS', 'js', 'locales', 'img', 'fonts'])
+gulp.task('build', ['index', 'css', 'libJS', 'js', 'img', 'fonts'])
 
 gulp.task('build-watch', ['build', 'watch'])
 

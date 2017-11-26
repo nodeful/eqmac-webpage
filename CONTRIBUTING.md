@@ -14,11 +14,8 @@ If you found a bug or typo on the website, please follow these steps to properly
 1. First, create an Issue with an 'enhancement' or 'bug' label
 2. Before doing any work, wait for someone to approve or discuss the issue
 3. Once work has been approved and/or coordinated, fork the repository
-
-4. Code bugs: Write code in your Forked repository. Make sure to properly comment complex solutions
-<br>Languages: Copy ./src/locales/en-GB.json to the same folder with your locale name, translate english to your language.
-
-5. Once you are happy with your code / translation, test it until no bugs are prevalent.
+4. Write code in your Forked repository. Make sure to properly comment complex solutions
+5. Once you are happy with your code, test it until no bugs are prevalent.
 6. Submit a [New Pull Request](https://github.com/romankisil/eqmac-website/pulls) and wait for someone to review it.
 7. Once your Pull Request has been reviewed and approved it will be merged
 

@@ -24,20 +24,9 @@
     $timeout,
     $document,
     RemoteDataService,
-    Localizer,
     $window
   ) => {
     const rs = $rootScope
-
-    rs.supportedLocales = Localizer.supportedLocales
-    rs.selectedLocale = Localizer.userLocale
-
-    Localizer.localizePage()
-
-    rs.changeLocale = () => {
-      Localizer.userLocale = rs.selectedLocale
-      Localizer.localizePage()
-    }
 
     rs.animateToDiv = function (id) {
       $timeout(function () {
@@ -60,9 +49,9 @@
         rs.downloadLink = release.assets[0].browser_download_url
         rs.releaseDate = new Date(release.published_at).toISOString().slice(0, 10)
       }).catch(err => {
-        rs.releaseTag = 'v2.0.6'
+        rs.releaseTag = 'V2.1'
         rs.downloadLink = `https://github.com/romankisil/eqMac2/releases/download/${$rootScope.releaseTag}/eqMac2.dmg`
-        rs.releaseDate = new Date('2017-08-02T20:56:41Z').toISOString().slice(0, 10)
+        rs.releaseDate = new Date('2017-11-26T20:56:41Z').toISOString().slice(0, 10)
         console.error(err)
       })
   }
@@ -72,7 +61,6 @@
     '$timeout',
     '$document',
     'RemoteDataService',
-    'Localizer',
     '$window',
     onRun
   ])
