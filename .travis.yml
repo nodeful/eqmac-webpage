@@ -7,9 +7,9 @@ before_script:
 script:
 - gulp build
 after_script:
-- git config --global user.email "romankisilo@gmail.com"
-- git config --global user.name "romankisil"
-- git clone https://$GH_TOKEN@github.com/romankisil/bitgapp.com.git
+- git config --global user.email $GH_EMAIL
+- git config --global user.name "nodeful"
+- git clone https://$GH_TOKEN@github.com/nodeful/bitgapp.com.git
 - cp -r build/* bitgapp.com/eqmac/
 - cd bitgapp.com/
 - git add --all
