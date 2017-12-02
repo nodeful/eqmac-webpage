@@ -4,7 +4,7 @@
 ### Submitting Issues (Bug reports)
 If you found a bug or typo on the website, please follow these steps to properly report it:
 1. Sign-up / Log-in to GitHub
-2. Go to [Issues tab](https://github.com/romankisil/eqmac-website/issues) **and make sure your issue was not reported yet**
+2. Go to [Issues tab](https://github.com/nodeful/eqmac-website/issues) **and make sure your issue was not reported yet**
 3. **If issue wasn't reported yet**, create a new one.
 3. Set the Label (on the right) to Bug or any other appropriate
 4. Describe the Bug as much as possible
@@ -16,13 +16,13 @@ If you found a bug or typo on the website, please follow these steps to properly
 3. Once work has been approved and/or coordinated, fork the repository
 4. Write code in your Forked repository. Make sure to properly comment complex solutions
 5. Once you are happy with your code, test it until no bugs are prevalent.
-6. Submit a [New Pull Request](https://github.com/romankisil/eqmac-website/pulls) and wait for someone to review it.
+6. Submit a [New Pull Request](https://github.com/nodeful/eqmac-website/pulls) and wait for someone to review it.
 7. Once your Pull Request has been reviewed and approved it will be merged
 
 ## How to Install and build
 You need to have NodeJS and NPM installed. [Download Here](https://nodejs.org/)
 ```
-git clone https://github.com/romankisil/eqmac-webpage
+git clone https://github.com/nodeful/eqmac-webpage
 cd eqmac-webpage/
 npm i
 gulp build
