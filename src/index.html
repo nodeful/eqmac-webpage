@@ -2,19 +2,19 @@
 <html ng-app="eqMac">
 
 <head>
-  <title>Bitgapp | eqMac2</title>
+  <title>Bitgapp | eqMac (v2)</title>
   <meta content="
-    equalizer,system-wide,audio,system,wide,OSX,mac,eqMac,eq,macos,sierra,eqMac2,bluetooth,airplay,dac,open,source,open-source,
+    equalizer,system-wide,audio,system,wide,OSX,mac,eqMac,eq,macos,sierra,eqMac (v2),bluetooth,airplay,dac,open,source,open-source,
     эквалайзер,системный,аудио,мак,макос,блютус,эйкплэй,цап,открытый,код,открытый-код
     ">
   <meta http-equiv="Content-Language"
     content="en,ru">
   <meta lang="en"
-    content="eqMac2 is a System-Wide Audio Equalizer for the Mac OSX & macOS. eqMac2 is Open-Source and is absolutely free for everyone.">
+    content="eqMac (v2) is a System-Wide Audio Equalizer for the Mac OSX & macOS. eqMac (v2) is Open-Source and is absolutely free for everyone.">
   <meta lang="ru"
-    content="eqMac2 это Системный Аудио Эквалайзер для Mac OSX & macOS. eqMac2 является Открытым проектом и абсолютно бесплатный для всех.">
+    content="eqMac (v2) это Системный Аудио Эквалайзер для Mac OSX & macOS. eqMac (v2) является Открытым проектом и абсолютно бесплатный для всех.">
   <meta property="og:title"
-    content="eqMac2 | Free Audio Equalizer for the Mac OSX" />
+    content="eqMac (v2) | Free Audio Equalizer for the Mac OSX" />
   <meta property="og:type"
     content="product" />
   <meta property="og:image"
@@ -22,11 +22,11 @@
   <meta property="og:url"
     content="https://bitgapp.com/eqmac" />
   <meta property="og:description"
-    content="eqMac2 is a System-Wide Audio Equalizer for the Mac OSX & macOS. eqMac2 is Open-Source and is absolutely free for everyone." />
+    content="eqMac (v2) is a System-Wide Audio Equalizer for the Mac OSX & macOS. eqMac (v2) is Open-Source and is absolutely free for everyone." />
 
   <meta content="summary">
-  <meta content="eqMac2 | Free Audio Equalizer for the Mac OSX">
-  <meta content="eqMac2 is a System-Wide Audio Equalizer for the Mac OSX & macOS. eqMac2 is Open-Source and is absolutely free for everyone.">
+  <meta content="eqMac (v2) | Free Audio Equalizer for the Mac OSX">
+  <meta content="eqMac (v2) is a System-Wide Audio Equalizer for the Mac OSX & macOS. eqMac (v2) is Open-Source and is absolutely free for everyone.">
   <meta content="https://bitgapp.com/eqmac/img/icon.jpg">
   <meta content="https://bitgapp.com/eqmac">
 
@@ -98,10 +98,10 @@
 
 <body id="app">
 
-  <a href="https://github.com/nodeful/eqMac2"
+  <a href="https://github.com/bitgapp/eqMac"
     target="_blank"
     class="github-corner"
-    aria-label="Fork eqMac2 on Github">
+    aria-label="Fork eqMac (v2) on Github">
     <svg viewBox="0 0 250 250" class="github" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
         <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
@@ -112,17 +112,6 @@
   <script type="text/javascript"
     src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5849523548ee27b6"></script>
 
-  <div id="google_translate_element"></div>
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT,
-        gaTrack: true,
-        gaId: 'UA-96287398-1'
-      }, 'google_translate_element');
-    }
-  </script>
   <!-- Hotjar Tracking Code for www.bitgapp.com -->
   <script>
       (function(h,o,t,j,a,r){
@@ -145,18 +134,24 @@
     <div class="featured-text">
       <img src="img/icon.jpg"
         class="icon">
-      <h1>eqMac2</h1>
+      <h1>eqMac</h1>
       <h2>System-Wide Audio Equalizer for the Mac</h2>
       <h3>Free & Open Source</h3>
       <span>Improves your Audio Listening on OSX / macOS</span>
       <br>
       <span>Experience Music on your Mac, how it is meant to be</span>
       <br>
+      <a href="https://eqmac.app"
+        target="_blank">
+        <div class="btn bg-green">
+          <span class="darker-gray">Try the new eqMac (Beta)</span>
+        </div>
+      </a>
       <a ng-href="{{downloadLink}}"
         ng-click="download()">
         <div class="btn"
           ng-class="downloadLink ? btn-bordered : btn-disabled">
-          <span>Download</span>
+          <span>Download old eqMac (v2)</span>
         </div>
       </a>
       <a href=""
@@ -166,18 +161,19 @@
         </div>
       </a>
       <br>
+      
       <span ng-show="releaseTag && releaseDate"
         class="small no-margin ligth-gray"><span>Build</span> {{releaseTag}} <span>released on</span> {{releaseDate}}</span>
       <p>{{c.getFormattedInt(c.downloads)}} <span>Downloads</span></p>
 
       <div class="social-links">
-        <a href="https://github.com/nodeful/eqMac2"
+        <a href="https://github.com/bitgapp/eqMac"
           target="_blank">
                 <img src="img/github.png">
                 <span>{{c.getFormattedInt(c.stargazers)}} <span>stars</span></span>
             </a>
 
-        <a href="https://github.com/nodeful/eqMac2"
+        <a href="https://github.com/bitgapp/eqMac"
           target="_blank">
                 <img src="img/fork.png">
                 <span>{{c.getFormattedInt(c.forks)}} <span>forks</span></span>
@@ -212,7 +208,7 @@
         <tr class="titles">
           <th>Features</th>
           <th class="version v1">eqMac</th>
-          <th class="version full full-first">eqMac2</th>
+          <th class="version full full-first">eqMac (v2)</th>
         </tr>
 
         <tr class="bg-darker-gray">
@@ -426,7 +422,7 @@
         target="_blank">@nodeful</a>
       <span>and other</span>
       <a class="yellow"
-        href="https://github.com/nodeful/eqMac2/graphs/contributors"
+        href="https://github.com/bitgapp/eqMac/graphs/contributors"
         target="_blank"><span>Contributors</span></a>
     </p>
   </div>

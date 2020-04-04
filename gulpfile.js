@@ -13,19 +13,16 @@ const merge = require('merge-stream')
 const imagemin = require('gulp-imagemin')
 const babel = require('gulp-babel')
 
-gulp.task('index', done => {
-  gulp.src('src/index.html')
-    .pipe(minifyHtml({
-      empty: true,
-      cdata: true,
-      spare: true,
-      collapseWhitespace: true
-    }))
-    .pipe(gulp.dest('./build/'))
-    .on('end', done)
-})
+const index = () => gulp.src('src/index.html')
+  .pipe(minifyHtml({
+    empty: true,
+    cdata: true,
+    spare: true,
+    collapseWhitespace: true
+  }))
+  .pipe(gulp.dest('./dist/'))
 
-gulp.task('css', done => {
+const css = () => {
   const compiledSass = gulp.src('src/scss/style.scss')
     .pipe(sass())
 
@@ -33,60 +30,38 @@ gulp.task('css', done => {
     './node_modules/angularjs-slider/dist/rzslider.min.css'
   ])
 
-  merge(compiledSass, cssLibs)
+  return merge(compiledSass, cssLibs)
     .pipe(minifyCss({
       keepSpecialComments: 0
     }))
     .pipe(concat('main.min.css'))
-    .pipe(gulp.dest('./build/css/'))
-    .on('end', done)
-})
+    .pipe(gulp.dest('./dist/css/'))
+}
 
-gulp.task('libJS', done => {
-  gulp.src([
-    './node_modules/angular/angular.min.js',
-    './node_modules/angular-scroll/angular-scroll.min.js',
-    './node_modules/angularjs-slider/dist/rzslider.min.js'
-  ]).pipe(concat('lib.min.js'))
-    .pipe(gulp.dest('./build/js/'))
-    .on('end', done)
-})
+const libJS = () => gulp.src([
+  './node_modules/angular/angular.min.js',
+  './node_modules/angular-scroll/angular-scroll.min.js',
+  './node_modules/angularjs-slider/dist/rzslider.min.js'
+]).pipe(concat('lib.min.js'))
+  .pipe(gulp.dest('./dist/js/'))
 
-gulp.task('js', (done) => {
-  gulp.src('./src/js/**/*.js')
-    .pipe(babel({
-      'presets': [
-        ['es2015']
-      ]
-    }))
-    .pipe(minifyJs())
-    .pipe(concat('main.min.js'))
-    .pipe(gulp.dest('./build/js/'))
-    .on('end', done)
-})
 
-gulp.task('img', done => {
-  gulp.src('./src/img/**/*')
-    .pipe(imagemin())
-    .pipe(gulp.dest('./build/img/'))
-    .on('end', done)
-})
+const js = () => gulp.src('./src/js/**/*.js')
+.pipe(babel({
+  'presets': [
+    ['@babel/env']
+  ]
+}))
+.pipe(minifyJs())
+.pipe(concat('main.min.js'))
+.pipe(gulp.dest('./dist/js/'))
 
-gulp.task('fonts', done => {
-  gulp.src('./src/fonts/**/*')
-    .pipe(gulp.dest('./build/fonts/'))
-    .on('end', done)
-})
 
-gulp.task('watch', function () {
-  gulp.watch('./src/scss/**/*', ['css'])
-  gulp.watch('./src/js/**/*', ['js'])
-  gulp.watch('./src/index.html', ['index'])
-  gulp.watch('./src/img/**/*', ['img'])
-})
+const img = () => gulp.src('./src/img/**/*')
+.pipe(imagemin())
+.pipe(gulp.dest('./dist/img/'))
 
-gulp.task('build', ['index', 'css', 'libJS', 'js', 'img', 'fonts'])
+const fonts = () => gulp.src('./src/fonts/**/*')
+.pipe(gulp.dest('./dist/fonts/'))
 
-gulp.task('build-watch', ['build', 'watch'])
-
-gulp.task('default', ['build'])
+exports.default = gulp.parallel(index, css, libJS, js, img, fonts)

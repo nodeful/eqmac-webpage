@@ -199,7 +199,7 @@ select{
     overflow: hidden;
 
     .btn{
-      width: 40%;
+      width: 80%;
     }
 
     .featured-image{
@@ -217,7 +217,7 @@ select{
       }
 
       span{
-        font-family: Roboto-Thin;
+        font-family: Roboto-Medium, Arial, "Times New Roman", sans-serif;
         font-size: 1vw * $scale;
       }
 
@@ -289,7 +289,7 @@ select{
       }
 
       .full{
-        @extend .full-border;
+        border: .2vw solid $yellow;
         border-bottom: none;
         border-top: none;
       }

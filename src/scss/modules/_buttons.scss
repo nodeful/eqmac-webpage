@@ -3,13 +3,13 @@
   @include border-radius(0.5vw * $scale);
   background-color: $gray;
   padding: 0.7vw * $scale;
-  max-width: 15vw * $scale;
+  // max-width: 15vw * $scale;
   min-width: 7vw * $scale;
   display: inline-block;
-  margin: 1vw * $scale 0.5vw * $scale;
+  margin: .5vw * $scale 0.5vw * $scale;
   span{
     font-size: 1.5vw * $scale !important;
-    font-family: Roboto-Medium !important;
+    font-family: Roboto-Medium, Arial, "Times New Roman", sans-serif;
   }
 }
 
