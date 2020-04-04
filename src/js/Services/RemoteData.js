@@ -8,7 +8,7 @@
     var RemoteDataService = {}
 
     RemoteDataService.getDownloads = function () {
-      return get('https://api.github.com/repos/nodeful/eqMac2/releases', true)
+      return get('https://api.github.com/repos/bitgapp/eqMac/releases', true)
         .then(function (releases) {
           var downloads = CONST.LEGACY_DOWNLOADS
           releases.forEach(function (release) {
@@ -29,11 +29,11 @@
     }
 
     RemoteDataService.getRepoInfo = function () {
-      return get('https://api.github.com/repos/nodeful/eqMac2', true)
+      return get('https://api.github.com/repos/bitgapp/eqMac', true)
     }
 
     RemoteDataService.getLatestRelease = function () {
-      return get('https://api.github.com/repos/nodeful/eqmac2/releases/latest', true)
+      return get('https://api.github.com/repos/bitgapp/eqMac/releases/latest', true)
     }
 
     var get = function (url, urlOverride) {
